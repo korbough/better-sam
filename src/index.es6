@@ -37,7 +37,7 @@ function SamJs (options) {
    * @return {Uint8Array|Boolean}
    */
   this.buf8 = (text, phonetic) => {
-    return buf8(ensurePhonetic(text, phonetic), opts);
+    return buf8(ensurePhonetic(text, 1), opts);
   }
 
   /**
@@ -49,7 +49,7 @@ function SamJs (options) {
    * @return {Float32Array|Boolean}
    */
   this.buf32 = (text, phonetic) => {
-    return buf32(ensurePhonetic(text, phonetic), opts);
+    return buf32(ensurePhonetic(text, 1), opts);
   }
 
   /**
@@ -61,7 +61,7 @@ function SamJs (options) {
    * @return {Promise}
    */
   this.speak = (text, phonetic) => {
-    return PlayBuffer(this.buf32(text, phonetic));
+    return PlayBuffer(this.buf32(text, 1));
   }
 
   /**
@@ -73,7 +73,7 @@ function SamJs (options) {
    * @return void
    */
   this.download = (text, phonetic) => {
-    RenderBuffer(this.buf8(text, phonetic));
+    RenderBuffer(this.buf8(text, 1));
   }
 }
 
