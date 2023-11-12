@@ -34,7 +34,7 @@ function SamJs (options) {
    * @return {Uint8Array|Boolean}
    */
   this.buf8 = (text, phonetic) => {
-    return buf8(ensurePhonetic(text, 1), opts);
+    return buf8(text, opts);
   }
 
   /**
@@ -46,7 +46,7 @@ function SamJs (options) {
    * @return {Float32Array|Boolean}
    */
   this.buf32 = (text, phonetic) => {
-    return buf32(ensurePhonetic(text, 1), opts);
+    return buf32(text, opts);
   }
 
   /**
